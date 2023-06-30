@@ -15,8 +15,8 @@ async def handle_client(reader: StreamReader, writer: StreamWriter):
 
 async def main():
     server = await asyncio.start_server(handle_client, host="localhost", port=1234)
-    await server.start_serving()
 
+    # client code
     c_reader, c_writer = await asyncio.open_connection(host="localhost", port=1234)
     text = input("What do you want to send? ") + "\n"
 
